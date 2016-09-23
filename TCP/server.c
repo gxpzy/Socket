@@ -52,11 +52,11 @@ int main(int argc, const char * argv[]) {
         printf("listening...\n");
     }
    
-       sin_size = sizeof(struct sockaddr_in);
-       if ((new_fd = accept(sockfd, (struct sockaddr *)(&client_addr), &sin_size)) == -1) {
-           fprintf(stderr, "Accept error:%s\n\a",strerror(errno));
-           exit(1);
-       }
+    sin_size = sizeof(struct sockaddr_in);
+    if ((new_fd = accept(sockfd, (struct sockaddr *)(&client_addr), &sin_size)) == -1) {
+        fprintf(stderr, "Accept error:%s\n\a",strerror(errno));
+        exit(1);
+    }
     printf("connected successful,please input the message [<1024bytes]:\n");
     while (1) {       
        if (fgets(buf, sizeof(buf), stdin) != buf) {
